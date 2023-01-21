@@ -1,0 +1,45 @@
+\documentclass{Shadowrun}
+
+% no extra space beween itemlists
+%\usepackage{enumitem}
+%\setlist{nosep}
+
+\usepackage[sharp]{easylist}
+\ListProperties(Style1*=\textbullet\hspace{2mm}, 
+                Style2*=\textendash\hspace{2mm}, 
+                Hide=10, Hang=true, Progressive=1em)
+
+
+% Yen Symbol:
+% ¥
+
+% document formalia
+\title{Shadowrun: Sechste Welt}
+\author{Tobias Anton}
+\date{\today}
+
+\sloppy
+
+\begin{document}
+    
+    \customtitle
+    \makebackground
+    \tableofcontents
+    
+    % \input{99-ToDo}
+    
+    % \input{01-Initiationsriten}
+    % \input{02-Midnight-Run}
+    
+    \input{90-Mission-Log}
+    \input{91-Connections}
+    \input{92-NPCs}
+    % \input{93-Loose-Ends}
+    % \input{94-RnD}
+    \input{95-Origins}
+    
+    \input{Z01-Free-Seattle-Prelude}
+    
+    % \input{testing}
+
+\end{document}

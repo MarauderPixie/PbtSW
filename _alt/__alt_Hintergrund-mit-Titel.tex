@@ -1,0 +1,37 @@
+%%% Seitenzahlenposition und Hintergrundbild
+\RequirePackage{eso-pic}
+\RequirePackage{graphicx}
+\RequirePackage{rotating}
+
+\newcommand{\makebackground}{%
+    \AddToShipoutPictureBG{%
+        \includegraphics[width=\paperwidth,height=\paperheight]%
+            {Hintergrund.jpg}
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw ([xshift=9.9cm,yshift=8.5cm]current page.center) node[rotate=270] 
+                {\fontsize{11}{13}\fontspec{Njord.otf}\textcolor{purplefont}{Shadowrun: Sechste Welt}};
+        \end{tikzpicture}
+    }
+    
+%    \AddToShipoutPictureFG{\put(575,751){%
+%        \rotatebox{0}{\scalebox{1}{%
+%            \fontsize{16}{19}\fontspec{Njord.otf}\textcolor{purplefont}%
+%                \thepage
+%            }
+%        }
+%    }}
+%    \AddToShipoutPictureFG{\put(575,745){%
+%        \rotatebox{270}{\scalebox{1}{%
+%            \fontsize{11}{13}\fontspec{Njord.otf}\textcolor{purplefont}%
+%                {Shadowrun: Sechste Welt}
+%            }
+%        }
+%    }}
+}
+
+% anderer Versuch
+%\RequirePackage{background}
+%\backgroundsetup{scale=1, angle=0, opacity=1, contents={%
+%    \includegraphics[width=\paperwidth,height=\paperheight]{Hintergrund.jpg}
+%    }
+%}

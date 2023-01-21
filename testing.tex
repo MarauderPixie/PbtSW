@@ -1,0 +1,119 @@
+\chapter{Testgelände}
+
+\begin{tikzpicture}
+    \draw [color=purplerule] (-0.2,-0.2) -- (0,0) ;
+    \draw [color=purplerule] (-0.1,-0.2) -- (0.1,0) ;
+    \draw [color=purplerule] (-0.0,-0.2) -- (0.2,0) ;
+    \draw [color=purplerule] (0.1,-0.2) -- (0.3,0) ;
+    \draw [color=purplerule] (0.2,-0.2) -- (0.4,0) ;
+    \draw [color=purplerule] (0.3,-0.2) -- (0.5,0) ;
+    \draw [color=purplerule] (0.4,-0.2) -- (0.6,0) ;
+    \draw [color=purplerule] (0.5,-0.2) -- (0.7,0) ;
+    \draw [color=purplerule] (0.6,-0.2) -- (0.8,0) ;
+    \draw [color=purplerule] (0.7,-0.2) -- (0.9,0) ;
+\end{tikzpicture}
+
+Und jetzt als Schleife:
+
+\begin{tikzpicture}
+    \foreach \s in {-0.2,-0.1,...,0.7}
+        \foreach \e in {0,0.1,...,0.9}
+        {
+            \draw [color=purplerule] (\s,-0.2) -- (\e,0);
+        }
+\end{tikzpicture}
+
+\foreach \li/\re in {A/X,B/Y,C/Z} {bo-le: \li, to-ri: \re \par}
+
+\subsection{tabellenmakro}
+
+\karma{
+allgemein & 3 / 5 \\
+Frankreich & 2 / 7 \\
+Autobahn & 5
+}
+
+
+
+
+Es braucht mitunter auch mal einen \textbullet zum sich austoben.
+
+
+Leftmark:
+
+\leftmark
+
+
+Rightmark:
+
+\rightmark
+
+\paragraph{uff} schalalala lorem ipsum so viel text
+lieber mal n \subparagraph{subparagraph} machen
+
+
+\section{Fonts}
+
+\textbf{Bold Text} \\
+
+\textsf{Sans Text} \\
+
+\textbf{\textsf{Bold Sans Text}} \\
+
+\textsf{\textbf{Sans Bold Text}} \\
+
+$\rightarrow$ der sans hat iwie keinen Bold und macht einfach Sabon draus :(
+
+\begin{tcolorbox}[enhanced jigsaw,
+                  colback   = graybox,
+                  colframe  = grayframe, 
+                  opacityback = 0.2,
+                  arc = 10pt,
+                  fuzzy halo = 1.5mm with grayframe,
+                  fontupper = \sffamily\normalsize]
+    % \textsf{\textbf{#1}} \par
+    \paragraph{Lena Wozniak}
+    
+    \textsf{Konzernzugehörigkeit:} Ruhrmetall AG, Außendienst Verkauf, Sektor Europa Süd
+    
+    \textbf{Lizenzen:} Persönliche Bewaffnung (Schwere Pistolen), Cyberware
+    
+    \textsf{Reservierung:} Wagen 3, Sitzplatz 14 (1. Klasse) 
+\end{tcolorbox}
+
+\subsection{Beispiel:}
+
+{\sffamily This is a sample text in \textbf{Sans Serif Font Typeface}}
+
+%\begin{tikzpicture}[remember picture, overlay]
+ %  \node ([draw, rotate=270, xshift=5cm, yshift=5cm]current page.center) {Shadowrun: Sechste Welt};
+%\end{tikzpicture}
+
+%\begin{tikzpicture} [remember picture, overlay]
+%    \draw ([xshift=5cm,yshift=5cm]current page.center) circle [radius=1mm];
+%\end{tikzpicture}
+
+
+
+
+\section{Test}
+
+% pro Senkung: huh.
+% pro Steigerung: Frosty wurde fucking festgenommen.
+
+\textbox{Mundanes}{
+    \begin{tabular}{m{\textwidth}}
+    140.000\nuyen insgesamt, ergo 35.000 pro Person (iirc) \\
+    eine \textbf{Stufe 6 SIN} inkl. Lizenzen pro Person \\
+    keine Änderung an Reputation oder Fahndungsstufe
+    \end{tabular}
+}
+
+\karma{
+    Allgemeine Schwierigkeit & 4 \\
+    Kreativität und Roleplay; Beiträge zur Stimmung & 3 / 3 \\
+    Erfüllte Teilziele & 1 / 2 \\
+    Keine Unbeteiligten zu Schaden gekommen & 1 / 1 \\
+    Runner sind nicht aufgefallen & 1 / 1 \\
+    Austausch beobachtet oder aufgezeichnet & 0 / 1 
+}

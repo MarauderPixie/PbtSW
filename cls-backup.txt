@@ -1,0 +1,232 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{Shadowrun}[2020/10/19 Shadowrun 6 LaTeX class]      
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Optionen
+%%%
+
+%%% Farben
+\newcommand{\headlinecolor}{\normalcolor}
+\RequirePackage{xcolor}
+\definecolor{purplefont}{HTML}{a12089}
+\definecolor{purplerule}{HTML}{94096a}
+\definecolor{grayframe}{HTML}{929081}
+\definecolor{graybox}{HTML}{e0dfda}
+\DeclareOption{green}{\renewcommand{\headlinecolor}{\color{green}}}
+\DeclareOption{red}{\renewcommand{\headlinecolor}{\color{slcolor}}}
+
+
+\DeclareOption{onecolumn}{\OptionNotUsed}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\ProcessOptions\relax
+\LoadClass[twocolumn, 10pt]{report}
+
+
+\RequirePackage[ngerman,english]{babel} % Festlegung der Sprache auf Deutsch (als Hauptsprache) und Englisch. Wichtig z. B. für Trennung von Wörtern
+%\RequirePackage{parskip}
+%\setlength{\parskip}{1em}
+\setcounter{secnumdepth}{0}
+
+
+%%% Seitenränder
+\RequirePackage{geometry}
+\geometry{a4paper,          %%% evtl. nochmal anpassen, circa:
+          left   = 1.8cm,   % 2cm
+          right  = 2.8cm,   % 3cm
+          top    = 1.8cm,   % 1.4cm oder 1.5cm
+          bottom = 2.4cm,   % 1.6cm
+          footskip = 1.8cm  % muss bestimmt entsprechend der Änderungen...
+} 
+
+
+%%% Fonts
+\renewcommand{\normalsize}{\fontsize{10}{12}\selectfont}
+\RequirePackage{fontspec}
+\setmainfont{SabonLTStd}[
+    Path        = fonts/ ,
+    Extension   = .otf,
+    UprightFont = *-Roman,
+    BoldFont    = *-Bold,
+    ItalicFont  = *-Italic
+    ]
+% use Switzerland instead of Amplitude for now bc Umlaute :()
+\setsansfont{SwitzerlandCond}[
+    Path        = fonts/ ,
+    Extension   = .ttf,
+    UprightFont = *-Regular,
+    BoldFont    = *-Bold,
+    ItalicFont  = *-Italic
+    ]
+
+    
+%%% Überschriften
+\RequirePackage[calcwidth, noindentafter]{titlesec}
+% über kurz oder lang braucht Seite für ein neues \chapter ein völlig eigenes Layout
+\RequirePackage{tikz}
+
+\titlespacing{\chapter}{0mm}{60mm}{48mm}
+\titleformat{\chapter}[display]%         <command>: which headline to edit
+    {\centering
+     %\fontsize{14.838mm}{17.806mm}
+     \fontsize{18mm}{17.806mm} % eher 8mm? und dann is titlespacing aber wieder borked
+     \fontspec{Njord.otf}
+     \color{white}
+    }%                          <format>:  how should it look
+    {\tikz[remember picture,overlay] 
+        \node[inner sep=0pt,anchor=north] at (current page.north)%
+        {\includegraphics[width=\paperwidth,height=\paperheight]%
+        {Kapitel.jpg}};
+    }%                          <label>:   what gets "printed"
+    {0pt}%                      <sep>:     horizontal seperation between label & body
+    {}
+%    {\titleline{\color{purplerule}\titlerule[3pt]}}%
+%        [\titleline{\color{purplerule}\titlerule[3pt]}]
+                        % <before-code>:   code preceding the title body
+
+
+\titlespacing{\section}{0em}{2em}{1em} % <left><before><after>
+\titleformat{\section}%
+    {\fontspec{Njord.otf}\huge}{\thesection}{}
+    {}[\titleline{\color{purplerule}\titlerule[3pt]}]
+    
+    
+\titlespacing{\subsection}{0em}{1.2em}{0.5em}
+\titleformat{\subsection}%
+    {\fontspec{Njord.otf}\Large}{\thesubsection}{}
+    {}
+    %{}[\color{purplerule}\vspace{-1em}\rule{\titlewidth}{1pt}]
+
+   
+\titlespacing{\subsubsection}{0em}{1em}{0.5em}
+\titleformat{\subsubsection}%
+    {\fontspec{Njord.otf}\large}{\thesubsubsection}{}{}
+
+
+% paragraph und subparagraph haben iwie keinen effekt...?
+        \titlespacing{\paragraph}{0em}{0pt}{0.5em}
+        \titleformat{\paragraph}[runin]%
+            {\fontspec{Njord.otf}\normalsize\color{purplefont}}{}{1em}{}
+%             
+%        \titleformat{\subparagraph}[runin]%
+%            {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+%            \titlespacing{\subparagraph}{0em}{1em}{0em}
+
+
+%%% Seitenzahlenposition und Hintergrundbild
+\RequirePackage{eso-pic}
+\RequirePackage{graphicx}
+\RequirePackage{rotating}
+
+\newcommand{\makebackground}{%
+    \AddToShipoutPictureBG{%
+        \includegraphics[width=\paperwidth,height=\paperheight]%
+            {Hintergrund.jpg}
+    }
+    
+%    \AddToShipoutPictureFG{\put(575,751){%
+%        \rotatebox{0}{\scalebox{1}{%
+%            \fontsize{16}{19}\fontspec{Njord.otf}\textcolor{purplefont}%
+%                \thepage
+%            }
+%        }
+%    }}
+    \AddToShipoutPictureFG{\put(575,745){%
+        \rotatebox{270}{\scalebox{1}{%
+            \fontsize{11}{13}\fontspec{Njord.otf}\textcolor{purplefont}%
+                {Shadowrun: Sechste Welt}
+            }
+        }
+    }}
+}
+
+
+%%% Headers & Footers
+\newcommand{\footslash}{\hspace{8pt}//\hspace{8pt}}
+\RequirePackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{%
+    \markboth{#1}{\noexpand\firstsectiontitle}\global\firstsectionmarktrue
+}
+\renewcommand{\sectionmark}[1]{%
+    \markright{#1}%
+    \iffirstsectionmark
+        \gdef\firstsectiontitle{#1}%
+    \fi
+    \global\firstsectionmarkfalse
+}
+\newif\iffirstsectionmark
+\def\firstsectiontitle{}
+
+% reguläre Seiten
+\fancyhf{}
+\fancyfoot[R]{
+    \fontspec{Njord.otf}\textcolor{purplefont}{
+        {\rightmark}\footslash
+        {\large\leftmark}\footslash
+        {\large\thepage}
+    }
+}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{23mm} % rückt den Footer näher an den rechten Rand
+
+% Kapitel- und Titelseiten
+\RequirePackage{extramarks}
+\fancypagestyle{plain}{%
+    \fancyhf{}  % clear all header and footer fields
+    \fancyfoot[R]{
+        \fontspec{Njord.otf}\textcolor{purplefont}{
+            {\rightmark}\footslash
+            {\large\leftmark}\footslash
+            {\large\thepage}
+        }
+    }
+}
+
+    
+%%% Title Page
+\newcommand{\customtitle}{%
+    \begin{titlepage}
+        \AddToShipoutPictureBG*{%
+            \includegraphics[width=\paperwidth,height=\paperheight]%
+                {Titel.jpg}
+        }
+        \vspace*{91mm}
+        \centering
+        \fontsize{42}{35}\fontspec{Njord.otf}\textcolor{white}
+        \@title
+    \end{titlepage}
+    \clearpage
+}
+
+
+
+%%% Makros
+% für Proben
+\newcommand{\probe}[2]{%
+    \textsf{\textbf{\color{purplefont}#1 (#2)}}
+}
+
+% für Fertigkeiten
+\newcommand{\skill}[1]{%
+    \textsf{\textbf{#1}}
+}
+
+% ~~für Textbox mit gestaffelten Proben~~
+% some Textbox...
+\RequirePackage{tcolorbox}
+\newcommand{\textbox}[2]{%
+    \begin{tcolorbox}[standard jigsaw,
+                      colback   = graybox,
+                      colframe  = grayframe, 
+                      opacityback = 0.7,
+                      sharp corners = all]
+                      %coltitle  = purplefont,
+                      %fonttitle = \fontspec{Njord.otf}\large,
+                      %title     = #1]
+        % \textsf{\textbf{#1}} \par
+        {\fontspec{Njord.otf}\large\textcolor{purplefont}{#1}} \par
+        \vspace{0.5em}
+        \textsf{\fontsize{28}{9.2}#2}
+    \end{tcolorbox}
+}

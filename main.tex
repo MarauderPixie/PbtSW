@@ -1,0 +1,56 @@
+\documentclass{Shadowrun}
+
+% no extra space beween itemlists
+%\usepackage{enumitem}
+%\setlist{nosep}
+
+\usepackage[sharp]{easylist}
+\ListProperties(Style1*=\textbullet\hspace{2mm}, 
+                Style2*=\textendash\hspace{2mm}, 
+                Hide=10, Hang=true, Progressive=1em)
+
+% \usepackage{tablestyles}
+% \usepackage{tabularx}
+
+%%% Links / clickable Inhaltsverzeichnis
+% offenbar ist die Reihenfolge, in der Pakete geladen werden, wichtig >_>
+\usepackage[hidelinks]{hyperref} % 'hidelinks' macht, dass keine roten Boxen gezeichnet werden
+
+
+
+% Yen Symbol:
+% ¥
+
+% document formalia
+\title{Shadowrun: Sechste Welt}
+\author{Tobias Anton}
+\date{\today}
+
+\sloppy
+
+\begin{document}
+    
+    \customtitle
+    \makebackground
+    \tableofcontents
+    
+    % \input{99-ToDo}
+
+    \input{00-Vorwort}
+    
+    \input{01-Principles}
+    \input{02-Moves}
+    \input{03-Dossiers}
+    \input{04-Combat}
+    \input{05-Magic}
+    \input{06-Matrix}
+    \input{07-Gear}
+    
+    \input{93-Loose-Ends}
+    \input{94-RnD}
+    \input{95-Origins}
+    
+    % \input{testing}
+    % \input{Z01-Free-Seattle-Prelude}
+
+\end{document}
