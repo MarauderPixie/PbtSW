@@ -55,12 +55,18 @@
     ItalicFont  = *-Italic
     ]
 % use Switzerland instead of Amplitude for now bc Umlaute :()
-\setsansfont{SwitzerlandCondensed}[
+% \setsansfont{SwitzerlandCondensed}[
+%     Path        = fonts/ ,
+%     Extension   = .ttf,
+%     UprightFont = *_Regular,
+%     BoldFont    = *_Bold,
+%     ItalicFont  = *_Italic
+%     ]
+\setsansfont{Amplitude}[
     Path        = fonts/ ,
     Extension   = .ttf,
-    UprightFont = *_Regular,
-    BoldFont    = *_Bold,
-    ItalicFont  = *_Italic
+    UprightFont = *-Regular,
+    BoldFont    = *-Bold
     ]
 
 
@@ -237,10 +243,14 @@
             \includegraphics[width=\paperwidth,height=\paperheight]%
                 {Titel.jpg}
         }
-        \vspace*{91mm}
+        \vspace*{105mm}
         \centering
-        \fontsize{42}{35}\fontspec{Njord.otf}\textcolor{white}
-        \@title
+        \fontsize{18}{15}\fontspec{Njord.otf}\textcolor{white}{Powered By The} \\
+        \vspace*{4mm}
+        \fontsize{48}{35}\fontspec{Njord.otf}\textcolor{white}{Sixth World} \\
+        % \@title \\
+        \vspace*{9mm}
+        \fontsize{21}{18}\fontspec{Njord.otf}\textcolor{white}{A homebrewed Shadowrun Hack}        
     \end{titlepage}
     \clearpage
 }
