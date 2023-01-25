@@ -1,2 +1,44 @@
-\chapter{Matrix} \label{matrix}
+\chapter{The Matrix} \label{matrix}
  
+The Matrix, a world-spanning high-fidelity virtual reality network, is the domain of the Decker. A deckers job is unique and the conflicts they face usually take place in the gleaming virtual world of the matrix. However, this conflict is no less important — or deadly — than the one their street sam buddy is going through. With security deckers, rogue software, and deadly black IC out there, a piece of Matrix code can be every bit as lethal as a 7.62mm bullet.
+
+
+
+\section{Nodes}
+
+A matrix system is made up of a series of Nodes. Each node represents a particular secured (or, if the decker is lucky, non-secured) region of the network that can be penetrated and controlled. GM’s are encouraged to draw simple maps of connected nodes, or create a list of different nodes and brief notes about them to use when the decker starts slinging code. Different nodes have different purposes, challenges, and payoffs:
+    \begin{easylist}
+        # \textbf{Security Node:} this node houses and dispatches intrusion countermeasures.
+        # \textbf{Datastore:} this node contains data, and may have encryption or even a data bomb failsafe to render data useless if intrusions are detected
+        # \textbf{Credentials Node:} contains user credentials or grants permissions which can help the decker avoid detection or access secured areas
+        # \textbf{Process Node:} runs a process on the network, slowing down the activity of other system software
+        # \textbf{Control Node:} this is a node to which multiple device nodes are connected; it serves as a master controller for the attached devices.
+        # \textbf{Device Nodes:} a single device connected to the network. Devices range from cameras to security drones to maglocks; almost everything is connected. Devices are frequent targets for intrusion attempts. Most simple devices have minimal privilege on the network, but that is often enough.
+    \end{easylist}
+
+
+\subsection{Decking}
+
+When a decker encounters a node or device, they must first hack into the node using the Sling Code move. Once inside, the decker can transit through the node or take advantage of any actions or bonuses the node provides (unless it is an Armored Node or is protected by IC, in which case it will not be nearly so trivial to use the node’s functions).
+
+
+\subsection{Armored Nodes}
+
+Many matrix nodes have only one layer of security: once you hack in, the node is yours. However, more secure systems have additional defenses. These nodes, called armored nodes, are both hardened against intrusion and contain embedded IC - intrusion countermeasures. Mechanically, Armored Nodes have both Wounds (how many is up to the GM) and it's IC (see Threats) fight back against intruding deckers. It’s possible to have nodes that have only Wounds, but no defensive IC. In this case, the node is effectively defenseless, and the decker simply deals damage to the node.
+
+
+\subsection{Alert Levels}
+
+A System has four Alert Levels, representing both how aware the system is that it has been compromised, and how actively it will attempt to locate, identify, and stop the intrusion.
+    \begin{easylist}
+        # \textbf{Green:} the system is unaware that it has been compromised.
+        # \textbf{Yellow:} the system has detected a possible intrusion. Routine notifications are dispatched, but no direct countermeasures are taken.
+        # \textbf{Orange:} the system is aware of an intrusion and is actively trying to locate, disable, and trace the decker. Nonlethal countermeasures are approved.
+        # \textbf{Red:} the system is aware of a serious intrusion. Lethal countermeasures are approved.
+    \end{easylist}
+
+
+
+\section{Building Systems}
+
+Including matrix and hacking challenges for the decker is one of the things the GM should keep in mind as gameplay evolves; a decker with nothing to hack is a sad panda indeed. One way to do so is outlining a system. This is different from hacking devices individually or wireless hacking. When handling wireless vs. wired hacking, simply treat individual devices as nodes that must be hacked. There is no need to draw a separate map for such nodes, as they exist in the physical world and the decker need only identify the physical device’s matrix icon in order to begin a hack.
