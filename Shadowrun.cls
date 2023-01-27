@@ -17,7 +17,7 @@
 \DeclareOption{red}{\renewcommand{\headlinecolor}{\color{slcolor}}}
 
 
-\DeclareOption{onecolumn}{\OptionNotUsed}
+% \DeclareOption{onecolumn}{\OptionNotUsed}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
 \ProcessOptions\relax
 \LoadClass[twocolumn, 10pt]{report}
@@ -320,17 +320,17 @@
 % 2nd argument: cell content 
 \newcommand{\lcr}[2]{\multicolumn{1}{#1}{#2}}
 
-% für tabellarische Karma-Box; seems to work :O
+
+% Tabelle. Uff.
 \usepackage{array}
 % \usepackage{multirow}
 \definecolor{graytbl}{HTML}{eaeae4}
 
-\newcommand{\karma}[1]{
-    \textbox{Karma}{
+\newcommand{\tbl}[2]{
+    \textbox{#1}{
        {\rowcolors{1}{gray!30!white}{}
-        \begin{tabular}{m{0.8\textwidth} m{0.1\textwidth}}
-            {\fontspec{Njord.otf}{Ziel}} &  \\
-            #1
+        \begin{tabular}{m{0.2\textwidth} m{0.7\textwidth}}
+            #2
         \end{tabular}
        }
     }
