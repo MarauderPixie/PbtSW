@@ -264,14 +264,14 @@
     ¥
 }
 
-% für Proben
-\newcommand{\probe}[2]{%
-    \textsf{\textbf{\color{purplefont}#1 (#2)}}%
+% für Moves 
+\newcommand{\move}[1]{%
+    \textsf{\textbf{\color{purplefont}#1}}%
 }
 
-% für Fertigkeiten
-\newcommand{\skill}[1]{%
-    \textsf{\textbf{#1}}%
+% für rolls (e.g. \roll{Hard})
+\newcommand{\roll}[1]{%
+    \textsf{\textbf{roll+#1}}%
 }
 
 % ~~für Textbox mit gestaffelten Proben~~
@@ -289,9 +289,9 @@
                       %fonttitle = \fontspec{Njord.otf}\large,
                       %title     = #1]
         % \textsf{\textbf{#1}} \par
-        {\fontspec{Njord.otf}\large\textcolor{purplefont}{#1}} \par
+        \fontspec{Njord.otf}\large\textcolor{purplefont}{#1} \par
         \vspace{0.5em}
-        {\fontsize{10}{12}\textsf{#2}}
+        \fontsize{10}{12}\textsf{#2}
     \end{tcolorbox}
 }
 
@@ -338,3 +338,144 @@
 
 % als Zeilenüberschrift:
 %  {\fontspec{Njord.otf}{☯}}
+
+
+% two-column box
+\newcommand{\fullbox}[2]{
+    {
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.2\textwidth} m{0.7\textwidth}}
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+    }
+}
+
+
+% Weapon Box
+\newcommand{\wpnbox}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.2\textwidth} m{0.35\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{ITEM}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{TAGS}}} &
+                \textbf{\textsf{\textcolor{purplefont}{DMG}}}  &
+                \textbf{\textsf{\textcolor{purplefont}{AMMO}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
+
+% Armor Box
+\newcommand{\armbox}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.25\textwidth} m{0.1\textwidth} m{0.3\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{ITEM}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{AR}}}   &
+                \textbf{\textsf{\textcolor{purplefont}{TAGS}}} &
+                \textbf{\textsf{\textcolor{purplefont}{TYPE}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
+
+% Drug Box
+\newcommand{\drugs}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.15\textwidth} m{0.5\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{DRUG}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{EFFECT}}}   &
+                \textbf{\textsf{\textcolor{purplefont}{DUR}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
+
+% Misc Box
+\newcommand{\miscbox}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.25\textwidth} m{0.05\textwidth} m{0.5\textwidth} m{0.1\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{ITEM}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{QTY}}}   &
+                \textbf{\textsf{\textcolor{purplefont}{EFFECT}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
+
+% Cyberdeck Box
+\newcommand{\deckbox}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.3\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.15\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{DECK}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{SYS}}} &
+                \textbf{\textsf{\textcolor{purplefont}{MASK}}}  &
+                \textbf{\textsf{\textcolor{purplefont}{HARD}}} &
+                \textbf{\textsf{\textcolor{purplefont}{STORE}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
+
+% Vehicle Box
+\newcommand{\vroombox}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.2\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{NAME}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{SEATS}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PWR}}} &
+                \textbf{\textsf{\textcolor{purplefont}{AR}}}  &
+                \textbf{\textsf{\textcolor{purplefont}{FRAME}}} &
+                \textbf{\textsf{\textcolor{purplefont}{SENS}}} &
+                \textbf{\textsf{\textcolor{purplefont}{FUEL}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
+
+% Vehicle Box
+\newcommand{\dronebox}[2]{
+    \begin{strip}
+        \textbox{#1}{
+            \rowcolors{1}{gray!30!white}{}
+            \begin{tabular}{m{0.25\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.1\textwidth} m{0.05\textwidth} m{0.1\textwidth}}
+                \textbf{\textsf{\textcolor{purplefont}{NAME}}} & 
+                \textbf{\textsf{\textcolor{purplefont}{PWR}}} &
+                \textbf{\textsf{\textcolor{purplefont}{FRAME}}} &
+                \textbf{\textsf{\textcolor{purplefont}{SENS}}} &
+                \textbf{\textsf{\textcolor{purplefont}{AR}}}  &
+                \textbf{\textsf{\textcolor{purplefont}{TAC}}} &                
+                \textbf{\textsf{\textcolor{purplefont}{DMG}}} &
+                \textbf{\textsf{\textcolor{purplefont}{FUEL}}} &
+                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                #2
+            \end{tabular}
+        }
+    \end{strip}
+}
