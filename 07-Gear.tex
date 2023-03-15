@@ -13,21 +13,22 @@ Equipment — like many items in Sixth World — is described in terms of tags, 
     \textbf{2-hand} & this item must be used with both hands \\
     \textbf{armor +n} & grants a +n bonus to existing armor \\
     \textbf{armor n} & grants n Armor (armor rating for vehicles or drones) \\
-    \textbf{arcane} & can only be used by magical archetypes \\
-    \textbf{area} & affects multiple targets \\
-    \textbf{avail} & the availability of the item on the shadow markets \\    
+    \textbf{arcane} & can only be used by awakened characters \\
+    \textbf{area / aoe} & affects multiple targets \\
+    % \textbf{avail} & the availability of the item on the shadow markets \\    
     \textbf{+bonus} & grants a bonus to a particular move; e.g. +1 to \move{Null Sweat} \\
     \textbf{conceal} & this weapon or item is easily hidden and will not be spotted by enemies \\
-    \textbf{damage n} & the amount of damage a weapon or other item deals; abbreviated dmg \\
-    \textbf{heal n} & restores n wounds \\
-    \textbf{ignores armor} & bypasses the target’s armor \\
+    % \textbf{damage n} & the amount of damage a weapon or other item deals; abbreviated dmg \\
+    % \textbf{heal n} & restores n wounds \\
+    % \textbf{ignores armor} & bypasses the target’s armor \\
+    \textbf{AP} & stands for Armor Penetration - bypasses/ignores the target’s armor \\
     \textbf{loud} & noisy and audible to anyone with functioning hearing; for weapons, it means the weapon cannot be suppressed \\
     \textbf{messy} & deals damage in a particularly gruesome way \\
     \textbf{obvious} & cannot be concealed, or is immediately visible to any observer \\
-    \textbf{range} & the range(s) at which the weapon or other attack is effective. Ranges are touch (t), close (c), short (s), medium (m), and long (l) \\
-    \textbf{shock} & the weapon deals electrical shock \\
-    \textbf{special (description)} & if the effect of the item requires explanation, use this tag \\
-    \textbf{stun} & this weapon or attack deals Stun damage only \\
+    % \textbf{range} & the range(s) at which the weapon or other attack is effective. Ranges are touch (t), close (c), short (s), medium (m), and long (l) \\
+    % \textbf{shock} & the weapon deals electrical shock \\
+    % \textbf{special (description)} & if the effect of the item requires explanation, use this tag \\
+    \textbf{stun} & this weapon or attack deals non-lethal Stun damage \\
     \textbf{subtle} & not easily noticed (as opposed to conceal, which means it is unnoticeable) \\
     \textbf{Supply n} & the amount of supplies or uses you can get out of an item. Each use of the item consumes 1 supply (unless otherwise stated)
 }
@@ -39,16 +40,16 @@ Equipment — like many items in Sixth World — is described in terms of tags, 
 The tags below apply to weapons. Feel free to customize the example equipment with these tags (subject to GM approval) to create your own gear, or recreate classic gear from Shadowrun.
 
 \fullbox{Weapon Tags}{
-    \textbf{auto} & this weapon can fire in full auto mode; abbreviated FA \\
-    \textbf{burst} & this weapon can fire in burst mode, mark off 1 additional Ammo to deal +1 damage; abbreviated BF \\
+    \textbf{FA} & this weapon can fire in Full Automatic mode \\
+    \textbf{BF} & this weapon has a Burst Fire mode: mark off 1 additional Ammo to deal +1 damage \\
     \textbf{chem} & this weapon delivers a chemical agent of some kind to the target; depending on the delivery mechanism, armor may be ignored \\
     \textbf{forceful} & when this weapon deals damage, it also deals 1 stun \\
-    \textbf{fuzed} & this weapon cannot be used at less than the shortest range increment listed \\
+    % \textbf{fuzed} & this weapon cannot be used at less than the shortest range increment listed \\
     \textbf{reload} & after using this weapon, it takes more than a moment to reload it \\
-    \textbf{semiauto} & this weapon fires one shot every time the trigger is pulled; abbreviated SA \\
+    \textbf{SA} & this weapon fires Semi Automatically - one shot every time the trigger is pulled \\
     \textbf{stabilized} & this weapon cannot be fired except from a bipod, tripod, or supported position \\
-    \textbf{suppressed} & this weapon makes little to no noise when fired \\
-    \textbf{thrown} & this item can be throw. If thrown, the range is short \\
+    \textbf{silenced} & this weapon makes little to no noise when fired \\
+    \textbf{thrown} & this item can be thrown \\
     \textbf{vented} & the weapon has recoil venting, granting +1 to Suppression Fire
 }
 
@@ -84,8 +85,8 @@ Rather than reproduce a listing of shadowrun weapons here, or provide an overly 
 \wpnbox{Melee Weapons}{
     Staff        & stun  & 1d6+2 & --- & 100¥ \\
     Combat Axe   & messy & 1d6+2 & --- & 1.250¥ \\
-    Combat Knife & ---   & 2d4b  & --- & 300¥ \\
-    Fists/Feet   & stun  & 1d6   & --- & --- \\
+    Combat Knife & ---   & 1d6   & --- & 300¥ \\
+    Fists/Feet   & stun  & 1d4   & --- & --- \\
     Katana       & ---   & 2d6b  & --- & 1.000¥ \\
     Spiked Glove & ---   & 1d4+1 & --- & 50¥ \\
     Stun Baton   & stun, shock, ignores armor & 1d4 & --- & 750¥ \\
@@ -218,7 +219,7 @@ Armor provides protection against incoming attack, reducing the damage dealt by 
     Light Armor Jacket & 1 & subtle & worn & 850¥ \\
     Combat Armor   & 3 & obvious & worn & 2.500¥  \\
     Form-fitting Armor & 1 & conceal & worn & 550¥ \\
-    Riot Shield    & 2 & occupies one hand & worn & 700¥
+    Riot Shield    & 2 & occupies one hand, obvious & worn & 700¥
 }
 
 
@@ -369,7 +370,7 @@ Vehicles have the following special tags (or stats, rly, innit).
 }
 
 
-\subsection{Bikes}
+% \subsection{Bikes}
 
 \vroombox{Bikes}{
     Dodge Scoot     & 1 & 1 & 0 & 4 & 0 & 4 & 1.800¥ \\
@@ -377,7 +378,7 @@ Vehicles have the following special tags (or stats, rly, innit).
     Harley Scorpion & 2 & 2 & 1 & 7 & 1 & 2 & 17.500¥
 }
 
-\subsection{Cars \& Trucks}
+% \subsection{Cars \& Trucks}
 
 \vroombox{Cars \& Trucks}{
     C-N Jackrabbit   & 3 & 1 & 0 & 6 & 0 & 3 & 10.000¥ \\
@@ -395,14 +396,14 @@ Drones have most of the same qualities as vehicles, although they lack the seats
 Tactical: the quality of the drone’s tactical expert system, which comes into play when the drone is in autonomous mode. Abbreviated tac.
 Armed drones also use the damage tag, indicating the damage of their built-in weapon systems.
 
-\subsubsection{Ground Drones}
+% \subsubsection{Ground Drones}
 \dronebox{Ground Drones}{
     Aztechnology Crawler & 1 & 5 & 0 & 2 & 0 & ---  & 3 & 4.000¥ \\
     GM-Nissan Doberman   & 1 & 7 & 1 & 1 & 1 & 1d6  & 3 & 5.000¥ \\
     Steel Lynx           & 1 & 9 & 2 & 1 & 2 & 2d6b & 2 & 9.500¥
 }
 
-\subsubsection{Airborne Drones}
+% \subsubsection{Airborne Drones}
 \dronebox{Airborne Drones}{
     Lockheed Optic-X & 1 & 2 & 0 & 2 & 1 & ---  & 2 & 12.500¥ \\
     MCT Roto-Drone   & 2 & 5 & 0 & 1 & 1 & 2d4b & 2 & 15.750¥ \\
@@ -440,6 +441,8 @@ Costs listed below are per dose.
 
 \subsection{Miscellaneous}
 
+Here's some stuff that'll be helpful in one way or another during your runs.
+
 \miscbox{Miscellaneous}{
     Medic Patch     & 1 & heal 2 & 500¥ \\ 
     Stimulant Patch & 1 & take +2 to next move, take 1 stun afterwards & 175¥ \\ 
@@ -447,7 +450,7 @@ Costs listed below are per dose.
     Trauma Patch    & 1 & +1 to First Aid move & 300¥ \\ 
     Quik-H4x Kit    & 4 & bypasses low-grade security locks/electronic devices & 350¥ \\ 
     Spy Kit         & 4 & +1 to Citation Needed or Check the Situation (assuming bugs haven’t been found) & 4.000¥ \\ 
-    Counter-surveillance Kit & 4 & +1 to Check the Situation to search for bugs & 3.000¥ \\ 
+    Counter-surveillance Kit & 4 & +1 to \move{Check the Situation} to search for bugs & 3.000¥ \\ 
     Infiltrator’s Kit & 4 & +1 to \move{Null Sweat} to infiltrate or avoid detection & 1.000¥
 }
 

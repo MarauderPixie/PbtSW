@@ -338,11 +338,13 @@
 
 % als Zeilenüberschrift:
 %  {\fontspec{Njord.otf}{☯}}
+\newcommand{\tblhead}[1]{
+    \textbf{\textsf{\textcolor{purplefont}{#1}}}
+}
 
 
 % two-column box
 \newcommand{\fullbox}[2]{
-    {
     \begin{strip}
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
@@ -351,7 +353,6 @@
             \end{tabular}
         }
     \end{strip}
-    }
 }
 
 
@@ -361,11 +362,11 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.2\textwidth} m{0.35\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{ITEM}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{TAGS}}} &
-                \textbf{\textsf{\textcolor{purplefont}{DMG}}}  &
-                \textbf{\textsf{\textcolor{purplefont}{AMMO}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{ITEM} & 
+                \tblhead{TAGS} &
+                \tblhead{DMG}  &
+                \tblhead{AMMO} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
@@ -378,11 +379,11 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.25\textwidth} m{0.1\textwidth} m{0.3\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{ITEM}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{AR}}}   &
-                \textbf{\textsf{\textcolor{purplefont}{TAGS}}} &
-                \textbf{\textsf{\textcolor{purplefont}{TYPE}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{ITEM} & 
+                \tblhead{AR}   &
+                \tblhead{TAGS} &
+                \tblhead{TYPE} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
@@ -395,10 +396,10 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.15\textwidth} m{0.5\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{DRUG}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{EFFECT}}}   &
-                \textbf{\textsf{\textcolor{purplefont}{DUR}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{DRUG} & 
+                \tblhead{EFFECT}   &
+                \tblhead{DUR} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
@@ -411,10 +412,10 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.25\textwidth} m{0.05\textwidth} m{0.5\textwidth} m{0.1\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{ITEM}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{QTY}}}   &
-                \textbf{\textsf{\textcolor{purplefont}{EFFECT}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{ITEM} & 
+                \tblhead{QTY}   &
+                \tblhead{EFFECT} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
@@ -427,12 +428,12 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.3\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.15\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{DECK}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{SYS}}} &
-                \textbf{\textsf{\textcolor{purplefont}{MASK}}}  &
-                \textbf{\textsf{\textcolor{purplefont}{HARD}}} &
-                \textbf{\textsf{\textcolor{purplefont}{STORE}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{DECK} & 
+                \tblhead{SYS} &
+                \tblhead{MASK}  &
+                \tblhead{HARD} &
+                \tblhead{STORE} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
@@ -445,14 +446,14 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.2\textwidth} m{0.1\textwidth} m{0.1\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.1\textwidth} m{0.1\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{NAME}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{SEATS}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PWR}}} &
-                \textbf{\textsf{\textcolor{purplefont}{AR}}}  &
-                \textbf{\textsf{\textcolor{purplefont}{FRAME}}} &
-                \textbf{\textsf{\textcolor{purplefont}{SENS}}} &
-                \textbf{\textsf{\textcolor{purplefont}{FUEL}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{NAME} & 
+                \tblhead{SEATS} &
+                \tblhead{PWR} &
+                \tblhead{AR}  &
+                \tblhead{FRAME} &
+                \tblhead{SENS} &
+                \tblhead{FUEL} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
@@ -465,17 +466,55 @@
         \textbox{#1}{
             \rowcolors{1}{gray!30!white}{}
             \begin{tabular}{m{0.25\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.05\textwidth} m{0.1\textwidth} m{0.05\textwidth} m{0.1\textwidth}}
-                \textbf{\textsf{\textcolor{purplefont}{NAME}}} & 
-                \textbf{\textsf{\textcolor{purplefont}{PWR}}} &
-                \textbf{\textsf{\textcolor{purplefont}{FRAME}}} &
-                \textbf{\textsf{\textcolor{purplefont}{SENS}}} &
-                \textbf{\textsf{\textcolor{purplefont}{AR}}}  &
-                \textbf{\textsf{\textcolor{purplefont}{TAC}}} &                
-                \textbf{\textsf{\textcolor{purplefont}{DMG}}} &
-                \textbf{\textsf{\textcolor{purplefont}{FUEL}}} &
-                \textbf{\textsf{\textcolor{purplefont}{PRICE}}} \\
+                \tblhead{NAME} & 
+                \tblhead{PWR} &
+                \tblhead{FRAME} &
+                \tblhead{SENS} &
+                \tblhead{AR}  &
+                \tblhead{TAC} &                
+                \tblhead{DMG} &
+                \tblhead{FUEL} &
+                \tblhead{PRICE} \\
                 #2
             \end{tabular}
         }
     \end{strip}
+}
+
+% Spells
+\newcommand{\spell}[3]{
+    \noindent {\fontspec{Njord.otf}\large{#1}} 
+    
+    \vspace{0.5em}
+    
+    \rowcolors{1}{gray!30!white}{}
+    \noindent \begin{tabular}{m{0.1\textwidth} m{0.25\textwidth} m{0.05\textwidth}}
+        \tblhead{RNG} &
+        \tblhead{MISC} &
+        \tblhead{DRAIN} \\
+        #2
+    \end{tabular}
+ 
+    \vspace{0.5em}
+    
+    {#3} \\
+}
+
+\newcommand{\spelldmg}[3]{
+    \noindent {\fontspec{Njord.otf}\large{#1}} 
+    
+    \vspace{0.5em}
+    
+    \rowcolors{1}{gray!30!white}{}
+    \noindent \begin{tabular}{m{0.1\textwidth} m{0.05\textwidth} m{0.15\textwidth} m{0.05\textwidth}}
+        \lcr{l}{\tblhead{RNG}} & 
+        \lcr{c}{\tblhead{DMG}} &
+        \lcr{l}{\tblhead{MISC}} &
+        \lcr{c}{\tblhead{DRAIN}} \\
+        #2
+    \end{tabular}
+ 
+    \vspace{0.5em}
+    
+    {#3} \\
 }

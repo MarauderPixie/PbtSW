@@ -59,67 +59,80 @@ The first domain you encounter is always the Domain of the Dweller, a mystical b
 
 \section{Spells}
 
-Like other equipment, spells (although they’re not exactly “equipment”) are described in terms of tags. Spells has the following special tag:
-Essence: the minimum Essence expenditure required to cast the spell.
-element: the spell has effects related to a particular element (e.g. fire, electricity, etc.)
-sustainable: this spell may stay in effect as long as essence is committed to it. A caster cannot use the Centering move while sustaining a spell.
-exhausting: this spell is quite difficult to cast; take 1 stun when casting it
+Like equipment, spells are described in terms of tags. Spells have the following special tags:
+
+\begin{easylist}
+    # \textbf{Drain}: the minimum Essence expenditure required to cast the spell
+    # \textbf{Element}: the spell has effects related to a particular element (e.g. fire, electricity, etc.)
+    # \textbf{Sustained}: this spell may stay in effect as long as essence is committed to it. A caster cannot use the \move{Centering} move while sustaining a spell
+    # \textbf{Exhausting}: this spell is quite difficult to cast; take 1 stun damage from drain when casting it
+\end{easylist}
 
 
 \subsection{Combat}
-Mana Bolt: deals 1d8 damage (bypassing armor) to creatures or spirits at short/medium ranges. Tags: range s/m/l, dmg 1d8, ignores armor, essence 2
+% usage:
+% \spell{namee}{range & dmg & misc & essence}{description}
 
-Fire bolt: deals 1d6 damage and fire effects to creatures at short/medium range. Tags: range s/m, dmg 1d6, fire, essence 1
+\spelldmg{Mana Bolt}{LoS & 1d8 & --- & 2}{Deals raw damage to a creature or spirit, ignores armor.}
 
-Lightning bolt: deals 1d8+1 damage and shock effects to creatures at short range. Tags: range s, dmg 1d8+1, shock, essence 2
+% Mana Bolt: deals 1d8 damage (bypassing armor) to creatures or spirits at short/medium ranges. Tags: range s/m/l, dmg 1d8, ignores armor, essence 2
 
-Acid Stream: deals 1d8 damage and acid effects to targets and objects at short and medium range. Tags: range s/m, acid, dmg 1d8, essence 2
+\spelldmg{Fire bolt}{LoS & 1d6 & fire & 1}{Deals fire damage and effects to a creature.}
 
-Fireball: deals 1d8+1 damage and fire effects to all creatures and objects in an area within short range. Tags: range s, fire, area, dmg 1d8+1, essence 3
+\spelldmg{Lightning bolt}{LoS & 1d8+1 & shock & 2}{Deals shock damage and effects to a creature.}
 
-Manaball: deals 1d8+1 damage (bypassing armor) to creatures and spirits within the target area. Tags: range s, area, dmg 1d8+1, ignores armor, essence 3
+\spelldmg{Acid Stream}{LoS & 1d8 & acid & 2}{Deals acid damage and effects to a creature or object.}
 
-Knockout: deals 1d8 stun (bypassing armor) to creatures in touch range. Tags: range t, dmg 1d8 stun, ignores armor, essence 2
+\spelldmg{Fireball}{LoS; AoE & 1d8+1 & fire & 3}{Deals fire damage and effects to all creatures and objects in a small area.}
+
+\spelldmg{Manaball}{LoS; AoE & 1d8+1 & --- & 3}{Deals raw damage to all creature and spirits in a small area, ignores armor.}
+
+\spelldmg{Knockout}{Touch & 1d8 & stun & 2}{Deals stun damage to a creature in touch range, ignores armor.}
 
 
 \subsection{Detection/Perception}
-Analyze Device: take +1 to your next move involving the device being analyzed, or learn what the device does. Costs 1 essence. Tags: range touch, essence 1
 
-Clairvoyance: when you Check the Situation, you can ask questions about a location you cannot see within the range of the spell. Tags: range c/s/m/l, essence 3
+\spell{Analyze Device}{touch & --- & 1}{Take +1 to your next move involving the device being analyzed, or learn what the device does.}
 
-Combat Sense: while you sustain this spell, you cannot be surprised, and take +1 to your first \move{Rock \& Roll} or \move{Null Sweat} move when combat starts. Tags: range t, subtle, essence 2
+\spell{Clairvoyance}{LoS & sustained & 3}{When you \move{Check the Situation}, you can ask questions about a location you cannot see within the range of the spell.}
 
-Mind Probe: when you touch the target, you get to know one thing as per Face’s Razor Insight move. Tags: range t, essence 2
+\spell{Combat Sense}{Touch & subtle, sustained & 2}{While you sustain this spell, you cannot be surprised, and take +1 to your first \move{Rock \& Roll} or \move{Null Sweat} move when combat starts.}
 
-Detect Life: when you look for living creatures in an area, take +2. Costs 2 essence. Tags: range c/s/m, essence 2
+\spell{Mind Probe}{Touch & --- & 2}{When you touch the target, you get to know one thing as per Face’s \move{Razor Insight} move.}
+
+\spell{Detect Life}{LoS & --- & 2}{When you look for living creatures in an area, take +2. (Anm.: weirder move iwie; Askennen lässt einen lebende Entitäten erkennen - then again: Askennen gibt einem eher das Gefühl, weniger eine konkrete Position und das hier vllt mehr so wie ein HUD und erfordert nicht den "Sichtwechsel" auf die Astralebene?}
+
 
 
 \subsection{Health}
-Antidote: when you touch the target, you halt poison or other toxin effects in the target. Tags: range t, essence 2
 
-Heal: when you touch the target, heal a number of wounds equal to 1 + the amount of essence spent on the spell. Tags:range t, exhausting, essence X
+\spell{Antidote}{Touch & --- & 2}{When you touch the target, you halt poisons or other toxins affecting the target.}
 
-Increase Attribute: when you touch the target, choose 1 stat. Moves using that stat take +1 while the spell is sustained. Tags: range t, exhausting, essence 2
+\spell{Heal}{Touch & exhausting & X}{When you touch the target, heal a number of wounds equal to 1 + the amount of essence spent on the spell. (Anm.: das braucht noch eine Interaktion mit der Essenz des Ziels.)}
+
+\spell{Antidote}{Touch & sustained & 2}{When you touch the target, choose a stat. Moves using that stat take +1 while the spell is sustained.}
 
 
 \subsection{Illusion}
-Chaotic World: when you cast this spell, you can hold 1 to spend on your or your teammate’s moves. Tags: range c/s, 2 essence
 
-Group Invisibility: while you sustain this spell, you conceal a number of creatures equal to the essence spent from being seen by creatures or metahumans. Costs 1 essence per target. Tags: range c, area, essence 1 per individual concealed
+\spell{Chaotic World}{LoS & --- & 2}{When you cast this spell, you can hold 1 to spend on your or your teammate’s moves.}
 
-Silence: while you sustain this spell, all sound is silenced in the area you specify. Essence cost varies by the size of the area. Tags: range c, area, essence cost varies by size of area
+\spell{Group Invisibility}{Touch & sustained & 1+X}{While you sustain this spell, you conceal a number of creatures equal to the essence spent from being seen by creatures or metahumans. X is the number of targets.}
 
-Stink: while you sustain this spell, all creatures in the affected area have to either leave the area or use air filters or take 1 stun. Tags: range s/m, area, essence 2
+\spell{Silence}{LoS; AoE & sustained & 1+X}{While you sustain this spell, all sound is silenced in the area you specify. Drain varies by the size of the area.}
+
+\spell{Stink}{LoS; AoE & sustained & 2}{While you sustain this spell, all creatures in the affected area have to either leave the area or use air filters or take 1 stun.}
 
 
 \subsection{Manipulation}
-Mana Barrier: while you sustain this spell, you create a barrier that blocks living creatures and spirits. Tags: range c, essence 2
 
-Light: while you sustain this spell, an area you specify is illuminated by bright light. Tags: range s, area, essence 2
+\spell{Mana Barrier}{LoS; AoE & sustained & 2}{While you sustain this spell, you create a barrier that blocks living creatures and spirits.}
 
-Shadow: while you sustain this spell, an area you specify is cloaked in arcane darkness. Tags: range s, essence 2
+\spell{Light}{LoS; AoE & sustained & 1}{While you sustain this spell, an area you specify is illuminated by bright light.}
 
-Fling: when you cast this spell on a target you are touching, you hurl the target out of melee range. Tags: range t/c, essence 1
+\spell{Shadow}{LoS; AoE & sustained & 1}{Basically the opposite of the Light spell; completely unsurprising, too! While you sustain this spell, an area you specify is cloaked in arcane darkness.}
+
+\spell{Fling}{Touch & --- & 1}{When you cast this spell on a target you are touching, you hurl the target out of melee range.}
 
 
 
@@ -154,25 +167,23 @@ wild: this spirit has an extra spirit point, but the shaman must take -1 when he
 
 \subsection{Spirit Moves}
 
-Spirits are independent entities, and have thier own moves. Their moves correspond to the harm, search, guard, enthrall, and mentor tags.
+Spirits are independent entities and have their own stats and moves. Their moves correspond to the harm, search, guard, enthrall, and mentor tags.
 
-Harm: When a spirit attacks someone or something, roll+Harm. On 10+, the spirit deals its damage. On 7-9, the spirit deals damage, but also takes damage.
+\paragraph{Harm:} When a spirit attacks someone or something, \roll{Harm}. On 10+, the spirit deals its damage. On 7-9, the spirit deals damage, but also takes damage. On 5 or lower the spirit only takes damage.
 
-Search: When the spirit attempts to locate individuals or items within its domain, roll+Search. On 10+, the spirit locates the item and can tell the Shaman where it is. On 7-9, the spirit can tell the shaman whether the item or person is within its domain, but not it’s specific location. Note: the GM and player should determine the search range for elementals.
+\paragraph{Search:} When the spirit attempts to locate individuals or items within its domain, \roll{Search}. On 10+, the spirit locates the item and can tell the Shaman where it is. On 7-9, the spirit can tell the shaman whether the item or person is within its domain, but not it’s specific location. Note: the GM and player should determine the search range for elementals.
 
-Guard: When a spirit stands in defense of its domain or inhabitants thereof, roll+Guard. On 10+, the spirit prevents damage or hostile effects from occurring. On 7-9, the spirit halves damage or the potency of a hostile effect.
+\paragraph{Guard:} When a spirit stands in defense of its domain or inhabitants thereof, \roll{Guard}. On 10+, the spirit prevents damage or hostile effects from occurring. On 7-9, the spirit halves damage or the potency of a hostile effect.
 
-Enthrall: When a spirit attempts to control someone’s actions or thoughts, roll+Enthrall. If the target is:
+\paragraph{Enthrall:} When a spirit attempts to control someone’s actions or thoughts, \roll{Enthrall}. If the target is:
+    \begin{easylist}
+        # An NPC: On a 10+, the spirit issues two instructions that the NPC must follow, or take 3 damage. On 7-9, the spirit may issue one instruction.
+        # A PC: On a 10+, both of the following apply. On 7-9, only 1 applies:
+            ## If the character complies, they mark XP
+            ## If the character refuses, they must \move{Null Sweat}
+    \end{easylist}
 
-    An NPC: On a 10+, the spirit issues two instructions that the NPC must follow, or take 3 damage. On 7-9, the spirit may issue one instruction.
-
-    A PC: On a 10+, both of the following apply. On 7-9, only 1 applies:
-
-    If the character complies, they mark XP
-
-    If the characer refuses, they must \move{Null Sweat}
-
-Mentor: When a spirit imparts knowledge or truth, roll+Mentor. On 10+, the GM provides, in secrete, a useful or interesting piece of information to the target. On 7-9, the GM provides an interesting piece of information.
+\paragraph{Mentor:} When a spirit imparts knowledge or truth, \roll{Mentor}. On 10+, the GM provides, in secret, a useful or interesting piece of information to the target. On 7-9, the GM provides an interesting piece of information.
 
 
 \subsection{Spirit Examples}
@@ -288,88 +299,102 @@ Wild: this spirit has an extra spirit point, but the shaman must take -2 wheneve
 
 \section{Totems}
 
-Shaman characters must select a totem, representing their connection to one of the great spirits.
+Shaman characters must select a totem, representing their connection to one of the great spirits. Alle Beschreibungen sind dem jeweiligen Eintrag in der Shadowhelix entnommen.
 
-\paragraph{BEAR}
-    \begin{easylist}
-        # \textbf{Boon:} reduce essence cost to conjure protector spirits by 1 (to a minimum of 1)
-        # \textbf{Flaw:} when injured, roll 1d6. On 1 or 2, the shaman goes berserk).
-    \end{easylist}
+\paragraph{BÄR} ist stark, aber auch gelassen, freundlich, sanft und weise, solange er nicht verletzt oder über die Maßen gereizt wird, und dies gilt auch für die Schamanen, die ihm folgen.
 
-\paragraph{CAT}
-    \begin{easylist}
-        # \textbf{Boon:} gain low-light vision; you cannot be surprised
-        # \textbf{Flaw:} you cannot deal lethal damage to your enemy
-    \end{easylist}
+\textbf{Boon:} reduce essence cost to conjure protector spirits by 1 (to a minimum of 1)
 
-\paragraph{COYOTE}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure Teacher spirits
-        # \textbf{Flaw:} destroyer spirits summoned lose 1 spirit point
-    \end{easylist}
+\textbf{Flaw:} when injured, roll 1d6. On 1 or 2, the shaman goes berserk).
 
-\paragraph{DOG}
-    \begin{easylist}
-        # \textbf{Boon:} and take +1 to conjure protector spirits or city spirits
-        # \textbf{Flaw:} your moves are glitched if you have left an ally behind or in danger
-    \end{easylist}
 
-\paragraph{GATOR}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure water spirits.
-        # \textbf{Flaw:} You are exceptionally greedy
-    \end{easylist}
+\paragraph{KATZE} ist verstohlen, schlau und arrogant und spielt gerne mit ihren Opfern, indem sie sie bedroht, verfolgt und verwirrt - und dann zum Todesstoß ansetzt.
 
-\paragraph{EAGLE}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure watcher spirits or air elementals
-        # \textbf{Flaw:} you have an allergy to something relatively common, and take -1 ongoing when exposed
-    \end{easylist}
+\textbf{Boon:} gain low-light vision; you cannot be surprised
 
-\paragraph{LION}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure protector or plains spirits
-        # \textbf{Flaw:} Take -1 on Gut Checks
-    \end{easylist}
+\textbf{Flaw:} you cannot deal lethal damage to your enemy
 
-\paragraph{OWL}
-    \begin{easylist}
-        # \textbf{Boon:} gain low-light vision, take +1 to conjure teacher spirits
-        # \textbf{Flaw:} Spells cost 1 more essence to cast in the day
-    \end{easylist}
 
-\paragraph{RACCOON}
-    \begin{easylist}
-        # \textbf{Boon:} and take +1 to conjure watcher spirits
-        # \textbf{Flaw:} must \move{Null Sweat} to avoid letting his curiosity get to him
-    \end{easylist}
+\paragraph{COYOTE} wird in der Magietheorie als listiger Täuscher, Schwindler, Trickser und - manchmal hinterhältiger und geradezu bösartiger - Scherzbold unter den Schutzgeistern interpretiert. 
 
-\paragraph{RAT}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure city spirits
-        # \textbf{Flaw:} when combat starts, you must \move{Null Sweat}, or flee
-    \end{easylist}
+\textbf{Boon:} take +1 to conjure Teacher spirits
 
-\paragraph{RAVEN}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure watcher spirits
-        # \textbf{Flaw:} you must take advantage of others’ misfortune when you can
-    \end{easylist}
+\textbf{Flaw:} destroyer spirits summoned lose 1 spirit point
 
-\paragraph{SHARK}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure destroyer spirits
-        # \textbf{Flaw:} when injured, roll 1d6: on <4, the shaman goes berserk
-    \end{easylist}
 
-\paragraph{SNAKE}
-    \begin{easylist}
-        # \textbf{Boon:} and take +1 to conjure seducer spirits
-        # \textbf{Flaw:} take -1 ongoing to \move{Rock \& Roll}
-    \end{easylist}
+\paragraph{HUND} ist treu gegenüber Freunden und Familie. Er kämpft verbissen, um sein Heim und seine Familie zu schützen. Personen, die freundlich ihm gegenüber sind, schützt er ebenso, allerdings tendiert er in diesem Streben zur Sturheit.
 
-\paragraph{WOLF}
-    \begin{easylist}
-        # \textbf{Boon:} take +1 to conjure protector spirits
-        # \textbf{Flaw:} you must \move{Null Sweat} to retreat from combat
-    \end{easylist}
+\textbf{Boon:} and take +1 to conjure protector spirits or city spirits
+
+\textbf{Flaw:} your moves are glitched if you have left an ally behind or in danger
+
+
+\paragraph{GATOR} und die Schamanen, die ihm folgen - gelten als gierig aber auch ausgesprochen geduldig, was von manchen als faul und träge missinterpretiert wird. Wird diese Geduld allerdings überstrapaziert, und er zu sehr gereizt, kommt die brutale und gnadenlose Seite von Alligator durch, und er wird zum kaltblütigen Killer. 
+
+\textbf{Boon:} take +1 to conjure water spirits.
+
+\textbf{Flaw:} You are exceptionally greedy
+
+
+\paragraph{ADLER} ist stolz und einsam. Er fliegt hoch am Himmel und sieht alles, was sich unter ihm am Boden abspielt. Als Einzelgänger gelten Adler - und seine Schamanen - als Verteidiger der Reinheit der Natur, und gehen häufig hohe, persönliche Risiken im Kampf gegen Umweltverschmutzer und andere Übeltäter ein.
+
+\textbf{Boon:} take +1 to conjure watcher spirits or air elementals
+
+\textbf{Flaw:} you have an allergy to something relatively common, and take -1 ongoing when exposed
+
+
+\paragraph{LÖWE} ist ein tapferer und starker Krieger. Er schätzt es wenn andere Leute seine Arbeit erledigen, während er seine Kräfte schont. Falls nötig setzte er jedoch auch selbst seine enormen Kräfte ein. Löwe ist eingebildet und hat höchste Anforderungen an sich selbst, weshalb er einen hohen Lebensstil pflegt und vonseiten Untergebenen höchste Loyalität und Respekt erwartet. 
+
+\textbf{Boon:} take +1 to conjure protector or plains spirits
+
+\textbf{Flaw:} Take -1 on Gut Checks
+
+
+\paragraph{EULE} wird oft mit Weisheit, Prophezeiungen und/oder dem Tod assoziiert. Eulenschamanen haben ein besonderes Gespür für die Welt der Toten welches ihnen bei der Geisterbeschwörung zugute kommen kann. Desweiteren sind sie für ihre Wachsamkeit bekannt. 
+
+\textbf{Boon:} gain low-light vision, take +1 to conjure teacher spirits
+
+\textbf{Flaw:} Spells cost 1 more essence to cast in the day
+
+
+\paragraph{WASCHBÄR} ist ein cleverer, neugieriger Bandit, der jede Falle überwinden kann um an den Köder zu kommen. Falls nötig lässt er sich auf einen Kampf ein, bevorzugt aber Strategien und Tricks um diesen zu umgehen. Am liebsten klaut er anderen ihren jeweils wertvollsten Besitz. 
+
+\textbf{Boon:} and take +1 to conjure watcher spirits
+
+\textbf{Flaw:} must \move{Null Sweat} to avoid letting his curiosity get to him
+
+
+\paragraph{RATTE} findet man überall dort, wo Menschen leben und Abfall produzieren. Ratte ist ein Aasfresser der sich aus dem Müll das nimmt, was sie braucht. Ratte hasst offene Flächen und bleibt lieber im Verborgenen und vermeidet Kämpfe. Falls sie doch mal kämpft, tötet sie schnell und verschwindet dann wieder.
+
+\textbf{Boon:} take +1 to conjure city spirits
+
+\textbf{Flaw:} when combat starts, you must \move{Null Sweat}, or flee
+
+
+\paragraph{RABE} ist auf der ganzen Welt als Bote des Unglücks verschrien und er täuscht und blendet andere. Dieser hinterlistige Blender lebt von den Hinterlassenschaften anderer, die meist durch Krieg und Chaos zustande kommen. Allerdings löst er diese Dinge nicht selbst aus, sondern ist ein Opportunist, der nur Gelegenheiten ergreift, die sich ihm bieten. Er liebt gutes Essen und schlägt daher selten eine Einladung aus. Zudem ist er ein Vetter von Kojote, der ebenso zum Schwindel tendiert. Allerdings teilt Rabe nicht dessen Hang zu Düsternis und Gemetzel.
+
+\textbf{Boon:} take +1 to conjure watcher spirits
+
+\textbf{Flaw:} you must take advantage of others’ misfortune when you can
+
+
+\paragraph{HAI} Gnadenlos und kalt jagt Hai seine Ziele. Jeder, der am Meer lebt, kennt seine Macht und weiß, dass Hai gnadenlos ist und vom Blut seiner Feinde in wilde Raserei versetzt wird. Dementsprechend sind auch seine Anhänger zumeist ruhelose Wanderer und wilde, tödliche Kämpfer, die nicht ruhen, bis ihr Ziel tot ist.
+
+\textbf{Boon:} take +1 to conjure destroyer spirits
+
+\textbf{Flaw:} when injured, roll 1d6: on <4, the shaman goes berserk
+
+
+\paragraph{SCHLANGE} Schlange gilt den magisch Begabten rund um den Globus in erster Linie als Hüter, Bewahrer und Vermittler von Wissen. Anhänger von Schlange sind dementsprechend häufig magische Lehrer und Tutoren, die ihr Wissen oft gegen alles tauschen, was sie im Gegenzug dafür erhalten können.
+
+\textbf{Boon:} and take +1 to conjure seducer spirits 
+
+\textbf{Flaw:} take -1 ongoing to \move{Rock \& Roll}
+
+
+\paragraph{WOLF} gilt in vielen Kulturen rund um den Globus als Krieger und Jäger, und ein Sprichwort besagt, dass er jeden Kampf gewinnen würde - außer seinen letzten. Er ist gegenüber den Mitgliedern seines Rudels absolut loyal, was auch auf seine Anhänger abfärbt, die wie ihr Schutzpatron stets bereit sind, für ihre Freunde und die erweiterte Familie notfalls bis zum Tod zu kämpfen, da sie diese jeweils als Angehörige des Rudels betrachten.
+
+\textbf{Boon:} take +1 to conjure protector spirits 
+
+\textbf{Flaw:} you must \move{Null Sweat} to retreat from combat
+
